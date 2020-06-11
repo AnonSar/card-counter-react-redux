@@ -12,7 +12,7 @@
         i {
 
             color: white;
-            font-size: 2.5rem;
+            font-size: 2rem;
             position: fixed;
             right: 1rem;
             top: 0.5rem;
@@ -26,24 +26,13 @@
 
     }
 
-    .info-div {
-        width: 30%;
-        background-color: white;
-        margin: auto;
-        margin-top: 6vh;
-        padding: 1rem;
-        border: 3px solid black;
-        border-radius: 1rem;
-
-        .first,
-        .second,
-        .third {
-            font-size: 1.5rem;
-            padding: 1rem 0;
-        }
+    .intro-div-component{
+        margin-top: 5vh;
     }
 
 }
+
+// Info Button Div
 
 .card-counting-strategy {
 
@@ -73,3 +62,5 @@
         padding-top: 8px;
     }
 }
+
+// Info Button Div
