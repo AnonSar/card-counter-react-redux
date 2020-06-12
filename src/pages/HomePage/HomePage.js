@@ -1,18 +1,36 @@
 import React from "react";
 import style from "./HomePage.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import IntroDivComponent from "../../components/intro-div/IntroDiv";
 import HeadingDiv from "../../components/heading-div/HeadingDiv";
+import NumberOfCardsSelectionComponent from "../../components/number-of-cards-selection/NumberOfCardsSelection";
+import { useSelector } from "react-redux";
 
 const HomePage = (props) => {
+  const playButtonState = useSelector((state) => {
+    return state.playButtonClicked;
+  });
+  const numberOfCardsSelectedConfirmation = useSelector((state) => {
+    return state.numberOfCardsSelectedConfirmation;
+  });
   return (
     <>
       <div className={style["main-div"]}>
+        {/* Heading Div */}
         <HeadingDiv />
+        {/* Heading Div */}
         {/* Intro Div */}
-        <div className={style["intro-div-component"]}>
-          <IntroDivComponent />
-        </div>
+        {!playButtonState && (
+          <div className={style["intro-div-component"]}>
+            <IntroDivComponent />
+          </div>
+        )}
+        {/* Number of Card To Be Rolled Selection Div */}
+        {playButtonState && !numberOfCardsSelectedConfirmation && (
+          <div className={style["number-of-cards-div"]}>
+            <NumberOfCardsSelectionComponent />
+          </div>
+        )}
+        {/* Number of Card To Be Rolled Selection Div */}
         {/* Intro Div */}
       </div>
     </>

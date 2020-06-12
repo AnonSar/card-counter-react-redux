@@ -5,62 +5,8 @@
     background-size: 100%;
     background-repeat: no-repeat;
 
-    .heading-div {
-        font-size: 4rem;
-        color: white;
-
-        i {
-
-            color: white;
-            font-size: 2rem;
-            position: fixed;
-            right: 1rem;
-            top: 0.5rem;
-
-            &:hover {
-                color: white;
-                cursor: pointer;
-            }
-
-        }
-
-    }
-
-    .intro-div-component{
+    .intro-div-component, .number-of-cards-div{
         margin-top: 5vh;
     }
 
 }
-
-// Info Button Div
-
-.card-counting-strategy {
-
-    .heading {
-        font-weight: bold;
-    }
-
-    div {
-        padding: 5px 0;
-
-        i {
-            font-size: 8px;
-            position: relative;
-            bottom: 3px;
-            padding-right: 3px;
-        }
-    }
-}
-
-.instructions {
-    .heading {
-        padding-top: 1rem;
-        font-weight: bold;
-    }
-
-    .content {
-        padding-top: 8px;
-    }
-}
-
-// Info Button Div
