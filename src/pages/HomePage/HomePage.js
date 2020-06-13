@@ -5,6 +5,7 @@ import HeadingDiv from "../../components/heading-div/HeadingDiv";
 import NumberOfCardsSelectionComponent from "../../components/number-of-cards-selection/NumberOfCardsSelection";
 import CardRollingSection from "../../components/card-rolling-section/CardRollingSection";
 import { useSelector } from "react-redux";
+import FooterComponent from "../../components/footer/footer";
 
 const HomePage = (props) => {
   const playButtonState = useSelector((state) => {
@@ -40,6 +41,7 @@ const HomePage = (props) => {
           </div>
         )}
         {/* Card Rolling Section */}
+        <FooterComponent />
       </div>
     </>
   );

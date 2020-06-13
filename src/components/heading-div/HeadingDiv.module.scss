@@ -2,7 +2,7 @@
     font-size: 4rem;
     color: white;
 
-    i {
+    #info-icon{
 
         color: white;
         font-size: 2rem;
@@ -11,7 +11,21 @@
         top: 0.5rem;
 
         &:hover {
-            color: white;
+            color: black;
+            cursor: pointer;
+        }
+
+    }
+
+    #home-icon{
+        color: white;
+        font-size: 2rem;
+        top: 0.5rem;
+        left: 1rem;
+        position: fixed;
+
+        &:hover {
+            color: black;
             cursor: pointer;
         }
 

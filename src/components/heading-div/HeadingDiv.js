@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./HeadingDiv.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import { faCircle, faInfoCircle, faHome } from "@fortawesome/free-solid-svg-icons";
 
 const HeadingComponent = (props) => {
   return (
@@ -90,8 +90,9 @@ const HeadingComponent = (props) => {
       {/* Modal */}
       {/* Heading Component */}
       <div className={style["heading-div"]}>
+        <i id={style["home-icon"]}><FontAwesomeIcon icon={faHome} /></i>
         CARD COUNTER{" "}
-        <i type="button" data-toggle="modal" data-target="#exampleModal">
+        <i type="button" data-toggle="modal" data-target="#exampleModal" id={style["info-icon"]}>
           <FontAwesomeIcon icon={faInfoCircle} />
         </i>
       </div>

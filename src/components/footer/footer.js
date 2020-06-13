@@ -9,9 +9,23 @@ const FooterComponent = (props) => {
     <div className={style["main-div"]}>
       <span className={style["content"]}>
         {" "}
-        {codedSymbol} by {" "}
-        <a href="https://github.com/AnonSar" target="_blank" rel="noopener noreferrer"> 
+        {codedSymbol} by{" "}
+        <a
+          href="https://github.com/AnonSar"
+          target="_blank"
+          rel="noopener noreferrer"
+          id={style["first-anchor-tag"]}
+        >
           AnonSar <FontAwesomeIcon icon={faGithub} />{" "}
+        </a>
+        <a
+          href="https://www.youtube.com/watch?v=oqkdB7It5Go"
+          target="_blank"
+          rel="noopener noreferrer"
+          id={style["second-anchor-tag"]}
+        >
+          {" "}
+          Inspiration
         </a>
       </span>
     </div>
