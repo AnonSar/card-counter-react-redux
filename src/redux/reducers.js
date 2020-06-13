@@ -2,12 +2,15 @@ import {
   PLAY_BUTTON_CLICK,
   NUMBER_OF_CARDS_SELECTED,
   NUMBER_OF_CARDS_SELECTION_CONFIRMATION,
+  UPDATE_CARD_COUNT,
 } from "./actionTypes";
 
 const initialState = {
   playButtonClicked: false,
   numberOfCardsSelectedConfirmation: false,
   numberOfCardsSelected: 0,
+  currentCountValue: 0,
+  numberOfCardsRolled: 0,
 };
 
 export const reducerFunction = (state = initialState, action) => {
@@ -42,11 +45,37 @@ export const reducerFunction = (state = initialState, action) => {
 
     // For numbers of cards selected
     case NUMBER_OF_CARDS_SELECTED:
+      if (action.numberOfCards === 2) {
+        return {
+          ...state,
+          numberOfCardsSelected: action.numberOfCards,
+          numberOfCardsSelectedConfirmation: true,
+          currentCountValue: 2,
+        };
+      } else if (action.numberOfCards === 4) {
+        return {
+          ...state,
+          numberOfCardsSelected: action.numberOfCards,
+          numberOfCardsSelectedConfirmation: true,
+          currentCountValue: 2,
+        };
+      } else {
+        return {
+          ...state,
+          numberOfCardsSelected: action.numberOfCards,
+          numberOfCardsSelectedConfirmation: true,
+          currentCountValue: 4,
+        };
+      }
+
+    // For updating the current card counnt
+    case UPDATE_CARD_COUNT:
       return {
         ...state,
-        numberOfCardsSelected: action.numberOfCards,
-        numberOfCardsSelectedConfirmation: true,
+        currentCountValue: state.currentCountValue + action.currentCount,
       };
+
+    // For reseting the count value and re
 
     default:
       return state;

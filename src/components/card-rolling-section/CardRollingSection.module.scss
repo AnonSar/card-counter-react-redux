@@ -1,0 +1,43 @@
+.main-div{
+
+    .cards-section{
+        img{
+            display: inline-block;
+            margin: 1rem;
+            height: 15rem;
+            border: 2px solid black;
+            border-radius: 0.5rem;
+        }
+    }
+
+    .info-section{
+        .info{
+            background-color: white;
+            border: 3px solid black;
+            border-radius: 0.5rem;
+            width: fit-content;
+            margin: auto; 
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: space-around;
+            span{
+                font-weight: bolder;
+            }
+        }
+    }
+
+    .button-section{
+        #button{
+            width: fit-content;
+            background-color: white;
+            border: 3px solid black;
+            border-radius: 0.5rem;
+            margin: 1rem;
+            &:hover{
+                background-color: #242424;
+                border-color: white;
+                color: white;
+            }
+        }
+    }
+}

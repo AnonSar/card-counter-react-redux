@@ -3,6 +3,7 @@ import style from "./HomePage.module.scss";
 import IntroDivComponent from "../../components/intro-div/IntroDiv";
 import HeadingDiv from "../../components/heading-div/HeadingDiv";
 import NumberOfCardsSelectionComponent from "../../components/number-of-cards-selection/NumberOfCardsSelection";
+import CardRollingSection from "../../components/card-rolling-section/CardRollingSection";
 import { useSelector } from "react-redux";
 
 const HomePage = (props) => {
@@ -24,6 +25,7 @@ const HomePage = (props) => {
             <IntroDivComponent />
           </div>
         )}
+        {/* Intro Div */}
         {/* Number of Card To Be Rolled Selection Div */}
         {playButtonState && !numberOfCardsSelectedConfirmation && (
           <div className={style["number-of-cards-div"]}>
@@ -31,7 +33,13 @@ const HomePage = (props) => {
           </div>
         )}
         {/* Number of Card To Be Rolled Selection Div */}
-        {/* Intro Div */}
+        {/* Card Rolling Section */}
+        {playButtonState && numberOfCardsSelectedConfirmation && (
+          <div>
+            <CardRollingSection />
+          </div>
+        )}
+        {/* Card Rolling Section */}
       </div>
     </>
   );

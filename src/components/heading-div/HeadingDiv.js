@@ -18,7 +18,11 @@ const HeadingComponent = (props) => {
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel" style={{fontSize: "2rem"}}>
+              <h5
+                className="modal-title"
+                id="exampleModalLabel"
+                style={{ fontSize: "2rem" }}
+              >
                 Info
               </h5>
               <button
@@ -33,7 +37,7 @@ const HeadingComponent = (props) => {
             <div className="modal-body">
               <div className={style["card-counting-strategy"]}>
                 <div className={style["heading"]}>
-                  Hi-Lo Card Counting Technique
+                  <u>Hi-Lo Card Counting Technique</u>
                 </div>
                 <div className={style["first"]}>
                   <i>
@@ -46,19 +50,20 @@ const HeadingComponent = (props) => {
                   <i>
                     <FontAwesomeIcon icon={faCircle} />
                   </i>{" "}
-                  Cards: 10s Aces Kings Queens Jacks have a value of +1
+                  <strong>Cards:</strong> 10s Aces Kings Queens Jacks have a
+                  value of -1
                 </div>
                 <div className={style["third"]}>
                   <i>
                     <FontAwesomeIcon icon={faCircle} />
                   </i>{" "}
-                  Cards: 7s 8s 9s have a value of 0
+                  <strong>Cards:</strong> 7s 8s 9s have a value of 0
                 </div>
                 <div className={style["fourth"]}>
                   <i>
                     <FontAwesomeIcon icon={faCircle} />
                   </i>{" "}
-                  Cards: 2s 3s 4s 5s 6s have a value of -1
+                  <strong>Cards:</strong> 2s 3s 4s 5s 6s have a value of +1
                 </div>
                 <div className={style["fifth"]}>
                   <i>
@@ -68,7 +73,9 @@ const HeadingComponent = (props) => {
                 </div>
               </div>
               <div className={style["instructions"]}>
-                <div className={style["heading"]}>Game Instrunctions</div>
+                <div className={style["heading"]}>
+                  <u>Game Instrunctions</u>
+                </div>
                 <div className={style["content"]}>
                   Click multiple times on the Roll Cards button to draw new
                   cards and when ready tally your count with the Show Count
