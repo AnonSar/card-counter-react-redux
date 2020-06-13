@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./HeadingDiv.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { homeButtonClick } from "../../redux/actions";
 import { faCircle, faInfoCircle, faHome } from "@fortawesome/free-solid-svg-icons";
 
