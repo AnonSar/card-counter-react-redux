@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./CardRollingSection.module.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { updateCardCount } from "../../redux/actions";
+import { updateCardCount , resetCardCountValue} from "../../redux/actions";
 
 const CardRollingSectionComponent = () => {
   const dispatch = useDispatch();
@@ -10,10 +10,6 @@ const CardRollingSectionComponent = () => {
   const currentCount = useSelector((state) => {
     return state.currentCountValue;
   });
-
-  //   const numberOfCardsRolled = useSelector((state) => {
-  //     return state.numberOfCardsRolled;
-  //   });
 
   const numberOfCardsSelected = useSelector((state) => {
     return state.numberOfCardsSelected;
@@ -111,6 +107,22 @@ const CardRollingSectionComponent = () => {
     }
   };
 
+  // Function for restarting the game
+  const performRestart = () => {
+    generateCards(generateCardsImgElement(startingSetOfCards));
+
+    if (numberOfCardsSelected === 2) {
+      dispatch(resetCardCountValue(2));
+    } else if (numberOfCardsSelected === 4) {
+      dispatch(resetCardCountValue(2));
+    } else {
+      dispatch(resetCardCountValue(4));
+    }
+    updateNumberOfCardsRolled(numberOfCardsSelected);
+    updateShowUserResult(false);
+    updateUserCountCalculationInput(``);
+  };
+
   if (numberOfCardsSelected === 2) {
     startingSetOfCards = [`3D`, `5S`];
   } else if (numberOfCardsSelected === 4) {
@@ -136,39 +148,88 @@ const CardRollingSectionComponent = () => {
   const [userInputCheckFlag, updateUserInputCheckFlag] = useState();
 
   // Function for holding the user input for the current count
-  const [
-    userCountCalculationInput,
-    updateUserCountCalculationInput,
-  ] = useState();
+  const [userCountCalculationInput, updateUserCountCalculationInput] = useState(
+    ``
+  );
 
   // Function for holding the flag that will be used for checking whether to show the user input or not
   const [showUserResult, updateShowUserResult] = useState(false);
 
   return (
     <>
-      {/* Modal for the user input to check their answer against the current count */}
+      {/* Modal for displaying the restart notification */}
       <div
-        class="modal fade"
-        id="currentCountCheckModal"
-        tabindex="-1"
+        className="modal fade"
+        id="restartModal"
+        tabIndex="-1"
         role="dialog"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5
+                className="modal-title"
+                id="exampleModalLabel"
+                style={{ fontSize: "1.5rem" }}
+              >
+                Info
+              </h5>
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div className="modal-body">
+              <strong>The game has been restarted. Best of luck !</strong>
+            </div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Modal for displaying the restart notification */}
+      {/* Modal for the user input to check their answer against the current count */}
+      <div
+        className="modal fade"
+        id="currentCountCheckModal"
+        tabIndex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+        data-backdrop="static"
+        data-keyboard="false"
+      >
+        <div
+          className="modal-dialog"
+          role="document"
+          style={{ border: "3px solid black" }}
+        >
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">
                 <strong>Check Count</strong>
               </h5>
               <button
                 type="button"
-                class="close"
+                className="close"
                 data-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <div
                 className={style["instruction"]}
                 style={{ textAlign: "left" }}
@@ -176,10 +237,10 @@ const CardRollingSectionComponent = () => {
                 Please enter your estimate for the current count:
               </div>
               <div className={style["user-input"]}>
-                <div class="input-group mb-3">
+                <div className="input-group mb-3">
                   <input
                     type="number"
-                    class="form-control"
+                    className="form-control"
                     aria-label="Default"
                     aria-describedby="inputGroup-sizing-default"
                     style={{
@@ -210,8 +271,9 @@ const CardRollingSectionComponent = () => {
                         </div>
                         <div className={style["content"]}>
                           Congratulations! Your estimate for the current count
-                          is correct. Please click restart, to start a new
-                          round.
+                          is correct. Please click <strong>RESTART</strong>, to
+                          start a new round or click <strong>CLOSE</strong> to
+                          continue with the current round.
                         </div>
                       </div>
                     ) : (
@@ -224,8 +286,9 @@ const CardRollingSectionComponent = () => {
                         </div>
                         <div className={style["content"]}>
                           Your estimate is wrong, the current count is{" "}
-                          {currentCount}. Please click restart, to start a new
-                          round.
+                          {currentCount}. Please click <strong>RESTART</strong>,
+                          to start a new round or click <strong>CLOSE</strong>{" "}
+                          to continue with the current round.
                         </div>
                       </div>
                     )}
@@ -233,17 +296,26 @@ const CardRollingSectionComponent = () => {
                 )}
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-secondary"
+                className="btn btn-secondary"
                 data-dismiss="modal"
+                style={{
+                  margin: "0 0.5rem",
+                  border: "1px solid black",
+                  borderRadius: "0.5rem",
+                }}
+                onClick={() => {
+                  updateShowUserResult(false);
+                }}
               >
                 Close
               </button>
               <button
+                style={{ border: "1px solid black", borderRadius: "0.5rem" }}
                 type="button"
-                class="btn btn-dark"
+                className="btn btn-dark"
                 onClick={() => {
                   handleSubmitButtonClick();
                 }}
@@ -277,16 +349,6 @@ const CardRollingSectionComponent = () => {
           >
             Roll Cards
           </button>
-          {/* <button
-            type="button"
-            className="btn btn-dark"
-            id={style["button"]}
-            onClick={() => {
-              updateCardCountDisplay(currentCount);
-            }}
-          >
-            Show Count
-          </button> */}
           <button
             type="button"
             className="btn btn-dark"
@@ -296,7 +358,16 @@ const CardRollingSectionComponent = () => {
           >
             Check Count
           </button>
-          <button type="button" className="btn btn-dark" id={style["button"]}>
+          <button
+            type="button"
+            className="btn btn-dark"
+            id={style["button"]}
+            data-toggle="modal"
+            data-target="#restartModal"
+            onClick={() => {
+              performRestart();
+            }}
+          >
             Restart
           </button>
         </div>

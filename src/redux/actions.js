@@ -6,6 +6,7 @@ import {
   SHOW_COUNT,
   ROLL_CARDS,
   UPDATE_CARD_COUNT,
+  RESET_CARD_COUNT
 } from "./actionTypes";
 
 // Function for returning the play button click action
@@ -58,3 +59,11 @@ export const updateCardCount = (currentCountValue) => {
     currentCount: currentCountValue
   };
 };
+
+// Function for reseting the card count value
+export const resetCardCountValue = (cardCountBaseValue) => {
+    return {
+        type: RESET_CARD_COUNT,
+        baseVal: cardCountBaseValue
+    }
+}
