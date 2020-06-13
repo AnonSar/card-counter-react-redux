@@ -6,3 +6,4 @@ export const SHOW_COUNT = "SHOW_COUNT";
 export const ROLL_CARDS = "ROLL_CARDS";
 export const UPDATE_CARD_COUNT = "UPDATE_CARD_COUNT ";
 export const RESET_CARD_COUNT = "RESET_CARD_COUNT";
+export const HOME_BUTTON_CLICK = "HOME_BUTTON_CLICK";

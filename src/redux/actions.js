@@ -6,7 +6,8 @@ import {
   SHOW_COUNT,
   ROLL_CARDS,
   UPDATE_CARD_COUNT,
-  RESET_CARD_COUNT
+  RESET_CARD_COUNT,
+  HOME_BUTTON_CLICK
 } from "./actionTypes";
 
 // Function for returning the play button click action
@@ -65,5 +66,12 @@ export const resetCardCountValue = (cardCountBaseValue) => {
     return {
         type: RESET_CARD_COUNT,
         baseVal: cardCountBaseValue
+    }
+}
+
+// Function for returning the home button click
+export const homeButtonClick = () => {
+    return {
+        type: HOME_BUTTON_CLICK
     }
 }

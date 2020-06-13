@@ -3,7 +3,8 @@ import {
   NUMBER_OF_CARDS_SELECTED,
   NUMBER_OF_CARDS_SELECTION_CONFIRMATION,
   UPDATE_CARD_COUNT,
-  RESET_CARD_COUNT
+  RESET_CARD_COUNT,
+  HOME_BUTTON_CLICK,
 } from "./actionTypes";
 
 const initialState = {
@@ -77,10 +78,20 @@ export const reducerFunction = (state = initialState, action) => {
 
     // For reseting the card count
     case RESET_CARD_COUNT:
-        return {
-            ...state,
-        currentCountValue: action.baseVal
-        }
+      return {
+        ...state,
+        currentCountValue: action.baseVal,
+      };
+
+    // For handling the home button click
+    case HOME_BUTTON_CLICK:
+      return {
+        ...state,
+        playButtonClicked: false,
+        numberOfCardsSelectedConfirmation: false,
+        numberOfCardsSelected: 0,
+        currentCountValue: 0,
+      };
 
     default:
       return state;

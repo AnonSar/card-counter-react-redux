@@ -1,9 +1,14 @@
 import React from "react";
 import style from "./HeadingDiv.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useDispatch, useSelector } from "react-redux"
+import { homeButtonClick } from "../../redux/actions";
 import { faCircle, faInfoCircle, faHome } from "@fortawesome/free-solid-svg-icons";
 
 const HeadingComponent = (props) => {
+
+  const dispatch = useDispatch();
+
   return (
     <>
       {/* Modal */}
@@ -90,7 +95,7 @@ const HeadingComponent = (props) => {
       {/* Modal */}
       {/* Heading Component */}
       <div className={style["heading-div"]}>
-        <i id={style["home-icon"]}><FontAwesomeIcon icon={faHome} /></i>
+        <i id={style["home-icon"]}><FontAwesomeIcon icon={faHome} onClick={()=>{dispatch(homeButtonClick())}} /></i>
         CARD COUNTER{" "}
         <i type="button" data-toggle="modal" data-target="#exampleModal" id={style["info-icon"]}>
           <FontAwesomeIcon icon={faInfoCircle} />
