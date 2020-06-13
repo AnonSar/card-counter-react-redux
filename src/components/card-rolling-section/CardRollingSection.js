@@ -11,9 +11,9 @@ const CardRollingSectionComponent = () => {
     return state.currentCountValue;
   });
 
-//   const numberOfCardsRolled = useSelector((state) => {
-//     return state.numberOfCardsRolled;
-//   });
+  //   const numberOfCardsRolled = useSelector((state) => {
+  //     return state.numberOfCardsRolled;
+  //   });
 
   const numberOfCardsSelected = useSelector((state) => {
     return state.numberOfCardsSelected;
@@ -90,11 +90,26 @@ const CardRollingSectionComponent = () => {
     });
   };
 
-  // Function for getting the user input value 
+  // Function for handling the change in the user input
   const handleChange = (event) => {
-    const userInput = event.target.value;
-    console.log(userInput);
-  }
+    updateUserCountCalculationInput(event.target.value);
+    updateUserInputError(false);
+  };
+
+  // Function for handling the submit button click
+  const handleSubmitButtonClick = () => {
+    if (userCountCalculationInput.length !== 0) {
+      let userAnswer = parseInt(userCountCalculationInput);
+      updateShowUserResult(true);
+      if (userAnswer === currentCount) {
+        updateUserInputCheckFlag(true);
+      } else {
+        updateUserInputCheckFlag(false);
+      }
+    } else {
+      updateUserInputError(true);
+    }
+  };
 
   if (numberOfCardsSelected === 2) {
     startingSetOfCards = [`3D`, `5S`];
@@ -110,7 +125,24 @@ const CardRollingSectionComponent = () => {
   );
 
   // Function for showing the number of cards that has been rolled
-  const [numberOfCardsRolled, updateNumberOfCardsRolled] = useState(numberOfCardsSelected);
+  const [numberOfCardsRolled, updateNumberOfCardsRolled] = useState(
+    numberOfCardsSelected
+  );
+
+  // Function for holding the user input related error
+  const [userInputError, updateUserInputError] = useState(false);
+
+  // Function for holding the user input check flag
+  const [userInputCheckFlag, updateUserInputCheckFlag] = useState();
+
+  // Function for holding the user input for the current count
+  const [
+    userCountCalculationInput,
+    updateUserCountCalculationInput,
+  ] = useState();
+
+  // Function for holding the flag that will be used for checking whether to show the user input or not
+  const [showUserResult, updateShowUserResult] = useState(false);
 
   return (
     <>
@@ -134,13 +166,14 @@ const CardRollingSectionComponent = () => {
                 class="close"
                 data-dismiss="modal"
                 aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
+              ></button>
             </div>
             <div class="modal-body">
-              <div className={style["instruction"]} style={{textAlign:"left"}}>
-                Please enter your calculation for the current count:
+              <div
+                className={style["instruction"]}
+                style={{ textAlign: "left" }}
+              >
+                Please enter your estimate for the current count:
               </div>
               <div className={style["user-input"]}>
                 <div class="input-group mb-3">
@@ -149,11 +182,55 @@ const CardRollingSectionComponent = () => {
                     class="form-control"
                     aria-label="Default"
                     aria-describedby="inputGroup-sizing-default"
-                    style={{marginTop:"1rem", backgroundImage: `linear-gradient(0deg, black 2px, rgba(0, 150, 136, 0) 0),
-                    linear-gradient(0deg, rgba(0, 0, 0, 0.26) 1px, transparent 0)`}}
+                    style={{
+                      marginTop: "1rem",
+                      backgroundImage: `linear-gradient(0deg, black 2px, rgba(0, 150, 136, 0) 0),
+                    linear-gradient(0deg, rgba(0, 0, 0, 0.26) 1px, transparent 0)`,
+                    }}
                     onChange={handleChange}
                   />
                 </div>
+                {userInputError === true && (
+                  <div className={style["user-input-error-div"]}>
+                    <div className={style["heading"]}>Error</div>
+                    <div className={style["content"]}>
+                      Please check the input you have entered.
+                    </div>
+                  </div>
+                )}
+                {showUserResult && (
+                  <div className={style["user-input-result"]}>
+                    {userInputCheckFlag ? (
+                      <div>
+                        <div
+                          className={style["heading"]}
+                          style={{ color: "green" }}
+                        >
+                          Success
+                        </div>
+                        <div className={style["content"]}>
+                          Congratulations! Your estimate for the current count
+                          is correct. Please click restart, to start a new
+                          round.
+                        </div>
+                      </div>
+                    ) : (
+                      <div>
+                        <div
+                          className={style["heading"]}
+                          style={{ color: "red" }}
+                        >
+                          Failure
+                        </div>
+                        <div className={style["content"]}>
+                          Your estimate is wrong, the current count is{" "}
+                          {currentCount}. Please click restart, to start a new
+                          round.
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
             <div class="modal-footer">
@@ -164,8 +241,14 @@ const CardRollingSectionComponent = () => {
               >
                 Close
               </button>
-              <button type="button" class="btn btn-dark">
-                Save changes
+              <button
+                type="button"
+                class="btn btn-dark"
+                onClick={() => {
+                  handleSubmitButtonClick();
+                }}
+              >
+                Check
               </button>
             </div>
           </div>
@@ -187,7 +270,9 @@ const CardRollingSectionComponent = () => {
             id={style["button"]}
             onClick={() => {
               generateCards(generateCardsImgElement(generateCardIndexList()));
-              updateNumberOfCardsRolled(numberOfCardsRolled+numberOfCardsSelected)
+              updateNumberOfCardsRolled(
+                numberOfCardsRolled + numberOfCardsSelected
+              );
             }}
           >
             Roll Cards

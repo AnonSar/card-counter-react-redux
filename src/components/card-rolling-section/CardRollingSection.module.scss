@@ -41,3 +41,19 @@
         }
     }
 }
+
+.user-input-result , .user-input-error-div{
+    margin-top: 2rem;
+    border: 3px solid black;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    .heading{
+        font-weight: bolder;
+        font-size: 1.25rem;
+        
+    }
+    .content{
+        padding: 0.5rem 0;
+        font-weight: bolder;
+    }
+}
