@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "00ed6c8de252456e8b9607a1bedaa4c5",
+    "revision": "65ea01b2d1c407b641c935a5b8d407f3",
     "url": "/card-counter-react-redux/index.html"
   },
   {
-    "revision": "de59d2fde143ad821c82",
+    "revision": "fa477ac4a35c2aa4e54f",
     "url": "/card-counter-react-redux/static/css/main.c078c45e.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/card-counter-react-redux/static/js/2.0a82e6c7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "de59d2fde143ad821c82",
-    "url": "/card-counter-react-redux/static/js/main.70567017.chunk.js"
+    "revision": "fa477ac4a35c2aa4e54f",
+    "url": "/card-counter-react-redux/static/js/main.012bd2ca.chunk.js"
   },
   {
     "revision": "61c437f5bae03f815b25",

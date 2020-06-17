@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/card-counter-react-redux/static/css/main.c078c45e.chunk.css",
-    "main.js": "/card-counter-react-redux/static/js/main.70567017.chunk.js",
-    "main.js.map": "/card-counter-react-redux/static/js/main.70567017.chunk.js.map",
+    "main.js": "/card-counter-react-redux/static/js/main.012bd2ca.chunk.js",
+    "main.js.map": "/card-counter-react-redux/static/js/main.012bd2ca.chunk.js.map",
     "runtime-main.js": "/card-counter-react-redux/static/js/runtime-main.21275984.js",
     "runtime-main.js.map": "/card-counter-react-redux/static/js/runtime-main.21275984.js.map",
     "static/js/2.0a82e6c7.chunk.js": "/card-counter-react-redux/static/js/2.0a82e6c7.chunk.js",
     "static/js/2.0a82e6c7.chunk.js.map": "/card-counter-react-redux/static/js/2.0a82e6c7.chunk.js.map",
     "index.html": "/card-counter-react-redux/index.html",
-    "precache-manifest.c75253085bd85be336e99f8c60946aaf.js": "/card-counter-react-redux/precache-manifest.c75253085bd85be336e99f8c60946aaf.js",
+    "precache-manifest.bdc685f1dc3185328e69073482fa6199.js": "/card-counter-react-redux/precache-manifest.bdc685f1dc3185328e69073482fa6199.js",
     "service-worker.js": "/card-counter-react-redux/service-worker.js",
     "static/css/main.c078c45e.chunk.css.map": "/card-counter-react-redux/static/css/main.c078c45e.chunk.css.map",
     "static/js/2.0a82e6c7.chunk.js.LICENSE.txt": "/card-counter-react-redux/static/js/2.0a82e6c7.chunk.js.LICENSE.txt",
@@ -76,6 +76,6 @@
     "static/js/runtime-main.21275984.js",
     "static/js/2.0a82e6c7.chunk.js",
     "static/css/main.c078c45e.chunk.css",
-    "static/js/main.70567017.chunk.js"
+    "static/js/main.012bd2ca.chunk.js"
   ]
 }

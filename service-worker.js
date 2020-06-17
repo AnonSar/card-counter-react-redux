@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/card-counter-react-redux/precache-manifest.c75253085bd85be336e99f8c60946aaf.js"
+  "/card-counter-react-redux/precache-manifest.bdc685f1dc3185328e69073482fa6199.js"
 );
 
 self.addEventListener('message', (event) => {
