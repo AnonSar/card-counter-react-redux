@@ -12,7 +12,7 @@ class MainRouter extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" component={HomePage}></Route>
+        <Route exact path="/card-counter-react-redux" component={HomePage}></Route>
       </Switch>
     );
   }
