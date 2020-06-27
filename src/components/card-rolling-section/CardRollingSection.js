@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./CardRollingSection.module.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { updateCardCount , resetCardCountValue} from "../../redux/actions";
+import { updateCardCount, resetCardCountValue } from "../../redux/actions";
 
 const CardRollingSectionComponent = () => {
   const dispatch = useDispatch();
@@ -40,6 +40,7 @@ const CardRollingSectionComponent = () => {
 
   // Function for generating the card index
   const generateCardIndexList = () => {
+    updateLoadingAction(true);
     const firstCharacterList = [
       `2`,
       `3`,
@@ -69,6 +70,7 @@ const CardRollingSectionComponent = () => {
       );
     }
     dispatch(updateCardCount(calculateCurrentCount(result)));
+    updateLoadingAction(false);
     return result;
   };
 
@@ -130,6 +132,9 @@ const CardRollingSectionComponent = () => {
   } else {
     startingSetOfCards = [`2C`, `4S`, `7S`, `9D`, `5H`, `6C`];
   }
+
+  // Function for activating the load action
+  const [isLoading, updateLoadingAction] = useState(false);
 
   // Function for activating the card generation
   const [cardList, generateCards] = useState(
@@ -329,7 +334,13 @@ const CardRollingSectionComponent = () => {
       {/* Modal for the user input to check their answer against the current count */}
 
       <div className={style["main-div"]}>
-        <div className={style["cards-section"]}>{cardList}</div>
+        <div className={style["card-load-div"]}>
+          {isLoading ? (
+            <div className={style["loading-div"]}>Loading...</div>
+          ) : (
+            <div className={style["cards-section"]}>{cardList}</div>
+          )}
+        </div>
         <div className={style["info-section"]}>
           <div className={style["info"]}>
             <span>Total Number of Cards Rolled: {numberOfCardsRolled}</span>
