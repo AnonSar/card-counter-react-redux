@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/card-counter-react-redux/static/css/main.c078c45e.chunk.css",
-    "main.js": "/card-counter-react-redux/static/js/main.012bd2ca.chunk.js",
-    "main.js.map": "/card-counter-react-redux/static/js/main.012bd2ca.chunk.js.map",
+    "main.css": "/card-counter-react-redux/static/css/main.f914a975.chunk.css",
+    "main.js": "/card-counter-react-redux/static/js/main.f03d2837.chunk.js",
+    "main.js.map": "/card-counter-react-redux/static/js/main.f03d2837.chunk.js.map",
     "runtime-main.js": "/card-counter-react-redux/static/js/runtime-main.21275984.js",
     "runtime-main.js.map": "/card-counter-react-redux/static/js/runtime-main.21275984.js.map",
-    "static/js/2.0a82e6c7.chunk.js": "/card-counter-react-redux/static/js/2.0a82e6c7.chunk.js",
-    "static/js/2.0a82e6c7.chunk.js.map": "/card-counter-react-redux/static/js/2.0a82e6c7.chunk.js.map",
+    "static/js/2.f44f4bf2.chunk.js": "/card-counter-react-redux/static/js/2.f44f4bf2.chunk.js",
+    "static/js/2.f44f4bf2.chunk.js.map": "/card-counter-react-redux/static/js/2.f44f4bf2.chunk.js.map",
     "index.html": "/card-counter-react-redux/index.html",
-    "precache-manifest.bdc685f1dc3185328e69073482fa6199.js": "/card-counter-react-redux/precache-manifest.bdc685f1dc3185328e69073482fa6199.js",
+    "precache-manifest.8540c704657300b89640e8a66e596189.js": "/card-counter-react-redux/precache-manifest.8540c704657300b89640e8a66e596189.js",
     "service-worker.js": "/card-counter-react-redux/service-worker.js",
-    "static/css/main.c078c45e.chunk.css.map": "/card-counter-react-redux/static/css/main.c078c45e.chunk.css.map",
-    "static/js/2.0a82e6c7.chunk.js.LICENSE.txt": "/card-counter-react-redux/static/js/2.0a82e6c7.chunk.js.LICENSE.txt",
+    "static/css/main.f914a975.chunk.css.map": "/card-counter-react-redux/static/css/main.f914a975.chunk.css.map",
+    "static/js/2.f44f4bf2.chunk.js.LICENSE.txt": "/card-counter-react-redux/static/js/2.f44f4bf2.chunk.js.LICENSE.txt",
     "static/media/10C.svg": "/card-counter-react-redux/static/media/10C.bd17caf6.svg",
     "static/media/10D.svg": "/card-counter-react-redux/static/media/10D.7e448065.svg",
     "static/media/10H.svg": "/card-counter-react-redux/static/media/10H.14415155.svg",
@@ -74,8 +74,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.21275984.js",
-    "static/js/2.0a82e6c7.chunk.js",
-    "static/css/main.c078c45e.chunk.css",
-    "static/js/main.012bd2ca.chunk.js"
+    "static/js/2.f44f4bf2.chunk.js",
+    "static/css/main.f914a975.chunk.css",
+    "static/js/main.f03d2837.chunk.js"
   ]
 }

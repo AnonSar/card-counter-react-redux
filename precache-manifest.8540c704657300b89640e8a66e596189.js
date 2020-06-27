@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "65ea01b2d1c407b641c935a5b8d407f3",
+    "revision": "f7368d473c5a3ccf0b78ca95783cff05",
     "url": "/card-counter-react-redux/index.html"
   },
   {
-    "revision": "fa477ac4a35c2aa4e54f",
-    "url": "/card-counter-react-redux/static/css/main.c078c45e.chunk.css"
+    "revision": "667d69168c7b33a527f1",
+    "url": "/card-counter-react-redux/static/css/main.f914a975.chunk.css"
   },
   {
-    "revision": "0a88ef162724f7332d60",
-    "url": "/card-counter-react-redux/static/js/2.0a82e6c7.chunk.js"
+    "revision": "4533382621d8c5ef209f",
+    "url": "/card-counter-react-redux/static/js/2.f44f4bf2.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/card-counter-react-redux/static/js/2.0a82e6c7.chunk.js.LICENSE.txt"
+    "url": "/card-counter-react-redux/static/js/2.f44f4bf2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fa477ac4a35c2aa4e54f",
-    "url": "/card-counter-react-redux/static/js/main.012bd2ca.chunk.js"
+    "revision": "667d69168c7b33a527f1",
+    "url": "/card-counter-react-redux/static/js/main.f03d2837.chunk.js"
   },
   {
     "revision": "61c437f5bae03f815b25",
